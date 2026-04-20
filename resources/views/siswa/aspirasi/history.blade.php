@@ -22,7 +22,7 @@
                                 <th>Ruangan</th>
                                 <th>Keterangan</th>
                                 <th>Tanggal Selesai</th>
-                                <th>Riwayat Status</th>
+
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -35,11 +35,6 @@
                                 <td>{{ $aspirasi->ruangan->nama_ruangan ?? $aspirasi->lokasi }}</td>
                                 <td>{{ Str::limit($aspirasi->keterangan, 50) }}</td>
                                 <td>{{ $aspirasi->updated_at->format('d/m/Y H:i') }}</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#historyModal{{ $aspirasi->id_aspirasi }}">
-                                        <i class="ph ph-clock-counter-clockwise"></i> Lihat
-                                    </button>
-                                </td>
                                 <td>
                                     <a href="{{ route('siswa.aspirasi.detail', $aspirasi->id_aspirasi) }}" class="btn btn-info btn-sm">
                                         <i class="ph ph-eye"></i> Detail
